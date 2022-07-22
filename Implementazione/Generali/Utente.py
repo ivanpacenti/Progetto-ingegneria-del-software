@@ -16,7 +16,7 @@ class Utente():
         self.isAdmin=False
         self.isCustode=False
         
-    def tesseramento(self, email,codiceFiscale,tipoTesseramento):
+    def setTesseramento(self, email,codiceFiscale,tipoTesseramento):
         self.tesseramento=Tesseramento(email,codiceFiscale,tipoTesseramento)
         self.tesserato=True
 

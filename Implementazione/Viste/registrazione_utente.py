@@ -25,19 +25,25 @@ class UI_Iscrizione(object):
             campoCellulare=self.cellulare.text()
             campoDataNascita=self.dataNascita.text()
             nuovoUtente=Utente(campoNome,campoCognome,campoDataNascita,campoCellulare,campoPassword,campoNomeUtente)
-            GestoreUtenti.inserisciUtente(nuovoUtente)
-            self.window_conferma = QtWidgets.QDialog()
-            self.ui_conferma = Ui_ConfermaIscrizione()
-            self.ui_conferma.setupUi(self.window_conferma)
-            self.window_conferma.show()
+            unicita=True
+            for x in GestoreUtenti.collectionUtenti:
+                if(x.nomeUtente==campoNomeUtente): unicita=False
+            if(unicita==True):
+                GestoreUtenti.inserisciUtente(nuovoUtente)
+                self.window_conferma = QtWidgets.QDialog()
+                self.ui_conferma = Ui_ConfermaIscrizione()
+                self.ui_conferma.setupUi(self.window_conferma)
+                self.window_conferma.show()
+            else:
+                self.popupEI("Nome utente già in uso")
         else:
-            self.popupEI()
+            self.popupEI("Devi riempire tutti i campi")
 
 #popuo errore nell'iscirzione per campi mancanti
-    def popupEI(self):
+    def popupEI(self,messaggio):
         self.window_eiscrizione = QtWidgets.QDialog()
         self.ui_eiscrizione = Ui_erroreiscrizione()
-        self.ui_eiscrizione.setupUi(self.window_eiscrizione)
+        self.ui_eiscrizione.setupUi(self.window_eiscrizione,messaggio)
         self.window_eiscrizione.show()
 
 #popup modifica avvenuta con successo

@@ -50,8 +50,8 @@ class Ui_prenotazioni(object):
         # prenotazione se si è loggati come admin
         # prenotazione da utente
         if (self.tabellaprenotazioni.currentItem()!=None
-                and self.tabellaprenotazioni.currentItem().text()==GestoreUtenti.utenteConnesso.nome
-                or GestoreUtenti.utenteConnesso.isAdmin==True):
+                and (self.tabellaprenotazioni.currentItem().text()==GestoreUtenti.utenteConnesso.nome
+                or GestoreUtenti.utenteConnesso.isAdmin==True)):
             self.window_conferma = QtWidgets.QDialog()
             self.ui_conferma = Ui_conferma()
             self.ui_conferma.setupUi(self.window_conferma,"Vuoi eliminare la prenotazione?")
