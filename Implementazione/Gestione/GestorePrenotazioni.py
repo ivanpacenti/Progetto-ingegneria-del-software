@@ -80,14 +80,14 @@ class GestorePrenotazioni():
         if (colonna == 2): campo = GestorePrenotazioni.erbaSintetica
         if (colonna == 3): campo = GestorePrenotazioni.paddle
         for x in GestorePrenotazioni.collectionPrenotazioni:
-
             if(x.data==data
                     and x.oraInizio==orario
                     and str(x.campo.tipoCampo) == campo.tipoCampo
-                    and (str(x.utente.nome) == GestoreUtenti.utenteConnesso.nome or GestoreUtenti.utenteConnesso.isAdmin==True)
+                    and (str(x.utente.nome) == GestoreUtenti.utenteConnesso.nome
+                         or GestoreUtenti.utenteConnesso.isAdmin==True)
             ):
                 return x
             else:pass
 
-        def getCollectionPrenotazioni():
-            return GestorePrenotazioni.collectionPrenotazioni
+    def getCollectionPrenotazioni():
+        return GestorePrenotazioni.collectionPrenotazioni

@@ -14,6 +14,7 @@ from Implementazione.Gestione.GestoreBackup import GestoreBackup
 
 class Ui_gestionebackup(object):
 
+
     def saveBackup(self):
         GestoreBackup.salvaDati()
 
@@ -29,11 +30,12 @@ class Ui_gestionebackup(object):
         self.buttonBox.setStandardButtons(QtWidgets.QDialogButtonBox.Cancel|QtWidgets.QDialogButtonBox.Ok)
         self.buttonBox.setObjectName("buttonBox")
         self.save = QtWidgets.QPushButton(gestionebackup)
-        self.save.setGeometry(QtCore.QRect(70, 20, 113, 32))
+        self.save.setGeometry(QtCore.QRect(20, 30, 113, 32))
         self.save.setObjectName("save")
         self.load = QtWidgets.QPushButton(gestionebackup)
-        self.load.setGeometry(QtCore.QRect(70, 70, 113, 32))
+        self.load.setGeometry(QtCore.QRect(20, 80, 113, 32))
         self.load.setObjectName("load")
+
 
         self.retranslateUi(gestionebackup)
         self.buttonBox.accepted.connect(gestionebackup.accept) # type: ignore

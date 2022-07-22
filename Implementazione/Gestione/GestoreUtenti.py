@@ -31,7 +31,7 @@ class GestoreUtenti():
                     utentemodificato.tesserato=True
                 GestoreUtenti.collectionUtenti[index]=utentemodificato
                 if(GestoreUtenti.utenteConnesso.isAdmin==False): GestoreUtenti.utenteConnesso=utentemodificato
-                #print (f"{item} {utentemodificato}")
+
 
 
     def ricercaUtente(Utente):
