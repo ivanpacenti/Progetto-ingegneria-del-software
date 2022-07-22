@@ -18,4 +18,4 @@ Nome utente --> admin psw--> admin
 
 ###### per loggarsi come custode 
 
-Nome utente--> custode psw--> custod
+Nome utente--> custode psw--> custode
