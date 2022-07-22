@@ -36,7 +36,6 @@ class Ui_gestionepartite(object):
         punteggiodue=self.spindue.value()
         partita=Partita(giocatoreuno,punteggiouno,giocatoredue,punteggiodue)
         Ui_gestionepartite.prenotazione.aggiungiPartita(partita)
-        print(Ui_gestionepartite.prenotazione.collectionPartite[0].getPunteggioGiocatoreUno())
         self.visualizzaPartite()
 
     def visualizzaPartite(self):

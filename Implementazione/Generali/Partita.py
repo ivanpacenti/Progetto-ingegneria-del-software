@@ -6,3 +6,9 @@ class Partita():
         self.punteggiouno=punteggiouno
         self.punteggiodue=punteggiodue
         self.giocatoredue=giocatoredue
+
+    def getPunteggioUno(self):
+        return self.punteggiouno
+
+    def getPunteggioDue(self):
+        return self.punteggiodue
