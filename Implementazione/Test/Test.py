@@ -10,7 +10,7 @@ from Implementazione.Generali.Campo import Campo
 class MyTestCase(unittest.TestCase):
 
     def testLogin(self):
-        # Controlla che gli utenti appena creati non sono amministratori di default
+        # Controlla che gli utenti appena creati non sono amministratori di default.
         self.utente = Utente("Ivan", "prova", "08/06/1991", "333222556", "password", "asd")
         GestoreUtenti.setUtenteConnesso(self.utente)
         self.assertEqual(GestoreUtenti.utenteConnesso.isAdmin, False)
