@@ -102,11 +102,11 @@ class Ui_registrazionesocio(object):
         self.paddle.raise_()
         self.tennis_paddle.raise_()
         self.invia.raise_()
-
         #azioni dei pulsanti
-        if (GestoreUtenti.utenteConnesso.getTesseramento() ==True
+        if (GestoreUtenti.utenteConnesso.tesserato
                 or GestoreUtenti.utenteConnesso.isAdmin == True
-                or GestoreUtenti.utenteConnesso.isCustode== True):
+                or GestoreUtenti.utenteConnesso.isCustode== True
+                ):
             self.invia.setEnabled(False)
         else:
             self.invia.clicked.connect(self.tesseramento)

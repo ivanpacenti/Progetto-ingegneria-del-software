@@ -29,10 +29,10 @@ class Login(object):
                 self.logIn.setEnabled(False)
                 self.logOut.setEnabled(True)
                 self.iscriviti.setEnabled(False)
-        if GestoreUtenti.utenteConnesso.isAdmin == True:
+        if (GestoreUtenti.utenteConnesso!=None and GestoreUtenti.utenteConnesso.isAdmin == True):
             self.modifica.setEnabled(False)
             self.iscriviti.setEnabled(True)
-        elif (GestoreUtenti.utenteConnesso.isCustode == True):
+        elif (GestoreUtenti.utenteConnesso!=None and GestoreUtenti.utenteConnesso.isCustode == True):
             self.modifica.setEnabled(False)
             self.iscriviti.setEnabled(False)
         else:

@@ -26,6 +26,9 @@ class GestoreUtenti():
     def modificaUtente(utente,utentemodificato):
         for index, item in enumerate(GestoreUtenti.collectionUtenti):
             if(item == utente):
+                if GestoreUtenti.collectionUtenti[index].tesserato:
+                    utentemodificato.tesseramento=GestoreUtenti.collectionUtenti[index].tesseramento
+                    utentemodificato.tesserato=True
                 GestoreUtenti.collectionUtenti[index]=utentemodificato
                 if(GestoreUtenti.utenteConnesso.isAdmin==False): GestoreUtenti.utenteConnesso=utentemodificato
                 #print (f"{item} {utentemodificato}")
@@ -53,8 +56,10 @@ class GestoreUtenti():
         return GestoreUtenti.utente
 
     def creaTesseramento(email,codiceFiscale,tipoTesseramento):
-        GestoreUtenti.utenteConnesso.tesseramento(email, codiceFiscale, tipoTesseramento)
-        GestoreUtenti.contaSoci+=1
+        GestoreUtenti.contaSoci =0
+        GestoreUtenti.utenteConnesso.setTesseramento(email, codiceFiscale, tipoTesseramento)
+        for x in GestoreUtenti.collectionUtenti:
+            if x.getTesseramento(): GestoreUtenti.contaSoci+=1
 
     def getCollectionUtenti():
         return GestoreUtenti.collectionUtenti

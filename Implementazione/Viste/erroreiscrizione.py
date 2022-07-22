@@ -12,7 +12,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 
 class Ui_erroreiscrizione(object):
-    def setupUi(self, erroreiscrizione):
+    def setupUi(self, erroreiscrizione,messaggio):
         erroreiscrizione.setObjectName("Dialog")
         erroreiscrizione.resize(400, 93)
         self.buttonBox = QtWidgets.QDialogButtonBox(erroreiscrizione)
@@ -24,15 +24,15 @@ class Ui_erroreiscrizione(object):
         self.label.setGeometry(QtCore.QRect(30, 20, 341, 20))
         self.label.setObjectName("label")
 
-        self.retranslateUi(erroreiscrizione)
+        self.retranslateUi(erroreiscrizione,messaggio)
         self.buttonBox.accepted.connect(erroreiscrizione.accept) # type: ignore
         self.buttonBox.rejected.connect(erroreiscrizione.reject) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(erroreiscrizione)
 
-    def retranslateUi(self, erroreiscrizione):
+    def retranslateUi(self, erroreiscrizione,messaggio):
         _translate = QtCore.QCoreApplication.translate
         erroreiscrizione.setWindowTitle(_translate("erroreiscrizione", "Dialog"))
-        self.label.setText(_translate("erroreiscrizione", "hai lasciato un campo vuoto, devono essere tutti pieni!"))
+        self.label.setText(_translate("erroreiscrizione", messaggio))
 
 
 if __name__ == "__main__":
